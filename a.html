@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>a</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+           //a)Get all the countries from the Asia continent /region using the Filter function
+           
+           //S1
+            var req=new XMLHttpRequest();
+            //S2
+            req.open("GET","https://restcountries.com/v2/all")
+            //s3
+            req.send();
+            //S4
+            req.onload=function(){
+                console.log("HII")
+                var res=JSON.parse(req.response);
+                console.log(res)
+                var con=res.filter((ele)=>ele.region=="Asia");
+                console.log(con);
+            }
+
+
+        </script>
+        
+    </body>
+    </html>
